@@ -30,6 +30,16 @@ app.get('/greeting', (req, res) => {
 app.get('/greeting/:name', (req, res) => {
     res.send("Yerrrrr! Sup " + req.params.name + "!!!!")
 })
+
+
+//tip calculator
+app.get('/tip/:total/:tipPercentage', (req, res) => {
+    let percentage = parseInt(req.params.tipPercentage)/100
+    let tip = parseInt(req.params.total) * percentage
+    res.send(tip.toString())
+})
+
+
  
 //End Routes
  
